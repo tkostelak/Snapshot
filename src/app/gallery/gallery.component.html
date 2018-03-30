@@ -5,6 +5,7 @@
   <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'people'"(click)= "filterBy='people'"> People </button>
   <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'travel'"(click)= "filterBy='travel'"> Travel </button>
   <ul id="thumbnailList">
+    <hr>
     <li *ngFor="let image of (visibleImages | imageFilter:filterBy)">
       <img src="{{image.url}}" class="tn" width="250px" height="200px">
     </li>
