@@ -1,5 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { ImageService } from '../shared/image.service';
+import { ImageFilterPipe } from '../shared/filter.pipe';
 
 @Component({
   selector: 'app-gallery',
@@ -16,6 +17,6 @@ export class GalleryComponent implements OnChanges {
   }
 
   ngOnChanges(){
-    this.visibleImages = this.imageService.getImages();
+    this.visibleImages = this.newImageService.getImages();
   }
 }
