@@ -7,11 +7,11 @@ import { ImageService } from '../shared/image.service';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
-  title = 'Edited Photos'
+  title = 'Gallery'
   visibleImages: any[] = [];
 
-  constructor(private imageService: ImageService) {
-    this.visibleImages = this.imageService.getImages();
+  constructor(private newImageService: ImageService) {
+    this.visibleImages = this.newImageService.getImages();
 
    }
 
