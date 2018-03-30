@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: 'Oswald';
+  background-color: #E0FBFC;
+}
+
+.main-content{
+  padding-top: 60px;
+}
