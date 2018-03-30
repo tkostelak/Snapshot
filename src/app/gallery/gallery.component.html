@@ -1,9 +1,8 @@
-<h3>Gallery:</h3>
-<div class="row">
+<h3>{{ title }}</h3>
+<div class="row ">
   <ul id="thumbnailList">
     <li *ngFor="let image of visibleImages">
       <img src="{{image.url}}" class="tn" width="250px" height="200px">
-      <hr>
     </li>
   </ul>
 </div>
