@@ -1,11 +1,11 @@
 <h3>{{ title }}</h3>
 <div class="row ">
   <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'all'"(click)= "filterBy='all'"> All </button>
-  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'animals'"(click)= "filterBy='all'"> Animals </button>
-  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'people'"(click)= "filterBy='all'"> People </button>
-  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'travel'"(click)= "filterBy='all'"> Travel </button>
+  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'animals'"(click)= "filterBy='animals'"> Animals </button>
+  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'people'"(click)= "filterBy='people'"> People </button>
+  <button class = "btn btn-lg btn-info" [class.active]="filterBy === 'travel'"(click)= "filterBy='travel'"> Travel </button>
   <ul id="thumbnailList">
-    <li *ngFor="let image of (visibleImages | imageFilter )">
+    <li *ngFor="let image of (visibleImages | imageFilter:filterBy)">
       <img src="{{image.url}}" class="tn" width="250px" height="200px">
     </li>
   </ul>
