@@ -1,19 +1,17 @@
 .imageContainer {
   margin: 25px;
-  box-shadow: #555 1px 2px 8px 1px;
   min-height: 660px;
-  width: 900px;
+  min-width: 900px;
   background-position: center;
   background-repeat: no-repeat;
-  align-content: center;
 }
 
 #caption{
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: 'Oswald';
   padding: 20px;
   color: #222;
-  border: 5px solid #0D4656;
+  border: 10px solid #0D4656;
   width: 900px;
 }
 

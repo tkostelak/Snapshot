@@ -1,8 +1,9 @@
 body{
   font-family: 'Oswald';
-
 }
 
 .main-content{
   padding-top: 30px;
+  background-color: #F5FFFA;
+  padding-bottom: 50px;
 }

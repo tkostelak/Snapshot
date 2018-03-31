@@ -1,5 +1,8 @@
-h3{
+#galleryText {
+  margin-top: 20px;
   font-family: 'Oswald';
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 ul {
