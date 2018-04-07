@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../shared/image.service';
+// import { ImageService } from '../shared/image.service';
 import { Uploads } from '../uploads';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { AngularFirestore } from 'angularfire2/firestore';
 import * as _ from "Lodash";
 import { Observable } from 'rxjs/Observable';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'upload-form',
@@ -22,7 +24,7 @@ export class UploadComponent implements OnInit {
 
   isHovering: boolean;
 
-  constructor(private storage: AngularFireStorage) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
   toggleHover(event: boolean){
 
@@ -33,28 +35,29 @@ export class UploadComponent implements OnInit {
 
     if (file.type.split('/')[0] !== 'image') {
       console.error('unsupported file type :( ')
+      return;
     }
+
+    const path = `test/${new Date().getTime()}_${file.name}`;
+
+    this.task = this.storage.upload(path, file)
+
+    this.percentage = this.task.percentageChanges();
+    this.snapshot = this.task.snapshotChanges().pipe(
+      tap(snap => {
+        if (snap.bytesTransferred === snap.totalBytes){
+          this.db.collection('photos').add( { path, size: snap.totalBytes})
+        }
+      })
+    )
+
+    this.downloadURL = this.task.downloadURL();
+  }
+
+  isActive(snapshot) {
+    return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
   }
 
   ngOnInit() {
-  }
-
-  detectFiles(event) {
-    this.selectedFiles = event.target.files;
-  }
-
-  uploadSingle() {
-    let file = this.selectedFiles.item(0)
-    this.currentUpload = new Uploads(file);
-    this.upSvc.pushUpload(this.currentUpload)
-  }
-
-  uploadMulti(){
-    let files = this.selectedFiles
-    let filesIndex = _.range(files.length)
-    _.each(filesIndex, (idx) => {
-      this.currentUpload = new Uploads(files[idx]);
-      this.upsvc.pushUpload(this.currentUpload)]
-    })
   }
 }

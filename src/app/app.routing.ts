@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders }  from '@angular/core';
 
 import { ImageFilterPipe} from './shared/filter.pipe'
-import { ImageService } from './shared/image.service';
+// import { ImageService } from './shared/image.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { GalleryComponent } from './gallery/gallery.component';
