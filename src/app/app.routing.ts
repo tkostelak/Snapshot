@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     component: GalleryComponent
   },
   {
-    path: 'image:id',
+    path: 'image/:id',
     component: ImageComponent
   }
 ];
