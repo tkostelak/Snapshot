@@ -9,7 +9,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageComponent } from './image/image.component';
-import { appRoutes } from '../routes';
+import { routing } from './app.routing'
+import { WelcomeComponent } from './welcome/welcome.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { appRoutes } from '../routes';
     NavbarComponent,
     GalleryComponent,
     ImageComponent,
-    ImageFilterPipe
+    ImageFilterPipe,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    routing
   ],
   providers: [ImageService, ImageFilterPipe],
   bootstrap: [AppComponent]
