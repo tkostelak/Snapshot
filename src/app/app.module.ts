@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { ImageFilterPipe} from './shared/filter.pipe'
 import { ImageService } from './shared/image.service';
@@ -15,6 +17,7 @@ import { ImageComponent } from './image/image.component';
 import { routing } from './app.routing'
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
+import { DropZoneDirective } from './drop-zone.directive';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,16 @@ import { UploadComponent } from './upload/upload.component';
     ImageFilterPipe,
     WelcomeComponent,
     UploadComponent,
+    DropZoneDirective,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [ImageService, ImageFilterPipe],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 import { Uploads } from '../uploads';
+import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import * as _ from "Lodash";
-
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'upload-form',
@@ -11,7 +12,29 @@ import * as _ from "Lodash";
 })
 export class UploadComponent implements OnInit {
 
-  constructor(private upSvc: ImageService) { }
+  task: AngularFireUploadTask;
+
+  percentage: Observable<number>;
+
+  snapshot: Observable<any>;
+
+  downloadURL : Observable<string>;
+
+  isHovering: boolean;
+
+  constructor(private storage: AngularFireStorage) { }
+
+  toggleHover(event: boolean){
+
+  }
+
+  startUpload(event: FileList){
+    const file = event.item(0);
+
+    if (file.type.split('/')[0] !== 'image') {
+      console.error('unsupported file type :( ')
+    }
+  }
 
   ngOnInit() {
   }

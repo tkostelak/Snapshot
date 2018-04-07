@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Uploads } from '../uploads';
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
+import { UploadComponent } from '../upload/upload.component';
 
 @Injectable()
 export class ImageService{
@@ -39,7 +40,7 @@ export class ImageService{
 
   private deleteFileStorage(name:string){
     let storageRef = firebase.storage().ref();
-    storageRef.child(`${this.basePath}/${name}`).delete()
+    storageRef.child(`${this.basepath}/${name}`).delete()
   }
 
   visibleImages = [];
