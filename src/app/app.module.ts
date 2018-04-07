@@ -12,7 +12,6 @@ import { ImageComponent } from './image/image.component';
 import { routing } from './app.routing'
 import { WelcomeComponent } from './welcome/welcome.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +19,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     GalleryComponent,
     ImageComponent,
     ImageFilterPipe,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
