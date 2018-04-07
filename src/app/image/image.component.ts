@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../shared/image.service';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database'
 
 @Component({
   selector: 'app-image',

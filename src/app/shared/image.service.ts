@@ -1,7 +1,15 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase, AngularFire, FirebaseListObservable }
+from 'angularfire2/database';
+import { Uploads } from '../uploads';
 
 @Injectable()
 export class ImageService{
+  constructor(private af: AngularFire, private db: AngularFireDatabase) {
+
+  private basepath:string = '/uploads';
+
+
   visibleImages = [];
   getImages(){
     return this.visibleImages = Images.slice(0);
