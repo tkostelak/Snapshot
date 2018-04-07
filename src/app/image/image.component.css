@@ -1,9 +1,13 @@
 .imageContainer {
-  margin: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   min-height: 660px;
   min-width: 900px;
   background-position: center;
   background-repeat: no-repeat;
+  width: 80%;
+  height: 50%;
+
 }
 
 #caption{

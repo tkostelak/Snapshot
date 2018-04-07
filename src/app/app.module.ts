@@ -1,7 +1,10 @@
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { ImageFilterPipe} from './shared/filter.pipe'
 import { ImageService } from './shared/image.service';
@@ -24,7 +27,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [ImageService, ImageFilterPipe],
   bootstrap: [AppComponent]

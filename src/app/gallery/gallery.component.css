@@ -1,8 +1,9 @@
 #galleryText {
   margin-top: 20px;
-  font-family: 'Oswald';
-  font-size: 2em;
+  font-family: 'Lobster';
+  font-size: 3vw;
   margin-bottom: 20px;
+  color: #313332;
 }
 
 ul {
