@@ -1,15 +1,31 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFire, FirebaseListObservable }
-from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Uploads } from '../uploads';
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
 
 @Injectable()
 export class ImageService{
-  constructor(private af: AngularFire, private db: AngularFireDatabase) {
+  constructor(private af: AngularFireModule, private db: AngularFireDatabase) {}
 
   private basepath:string = '/uploads';
+  private uploadTask: firebase.storage.UploadTask;
 
+  pushUpload(upload: Uploads){
+    let storageRef = firebase.storage().ref();
+    this.uploadTask = storageRef.child(`${this.basepath}/${upload.file.name}`).put(upload.file);
 
+    this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot)=> {
+        upload.progress = (this.uploadTask.snapshot.bytesTransferred / this.uploadTask.snapshot.totalBytes) * 100
+      },
+      (error) =>
+      console.log(error)
+    ),
+    () => {
+
+    }
+  }
   visibleImages = [];
   getImages(){
     return this.visibleImages = Images.slice(0);
