@@ -5,6 +5,8 @@ export class Uploads {
   url: string;
   progress: number;
   createdAt: Date = new Date();
+  caption: string;
+  category: string;
 
   constructor(file:File){
 

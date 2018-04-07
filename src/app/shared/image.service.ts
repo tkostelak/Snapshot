@@ -23,9 +23,25 @@ export class ImageService{
       console.log(error)
     ),
     () => {
-
+      upload.url = this.uploadTask.snapshot.downloadURL
+      upload.name = upload.file.name
+      this.saveFileData(upload)
     }
   }
+
+  deleteUpload(upload: Upload) {
+    this.deleteFileData(upload.$key)
+    .then( () => {
+      this.deleteFileStorage(upload.name)
+    })
+    .catch(error => console.log(error))
+  }
+
+  private deleteFileStorage(name:string){
+    let storageRef = firebase.storage().ref();
+    storageRef.child(`${this.basePath}/${name}`).delete()
+  }
+
   visibleImages = [];
   getImages(){
     return this.visibleImages = Images.slice(0);

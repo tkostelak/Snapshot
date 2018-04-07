@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageComponent } from './image/image.component';
-import { WelcomeComponent } from './welcome/welcome.component'
+import { WelcomeComponent } from './welcome/welcome.component';
+import { UploadComponent } from './upload/upload.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: 'image/:id',
     component: ImageComponent
+  },
+  {
+    path: 'upload',
+    component: UploadComponent
   }
 ];
 

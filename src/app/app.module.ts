@@ -14,6 +14,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageComponent } from './image/image.component';
 import { routing } from './app.routing'
 import { WelcomeComponent } from './welcome/welcome.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ImageComponent,
     ImageFilterPipe,
     WelcomeComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
