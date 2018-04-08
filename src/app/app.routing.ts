@@ -10,6 +10,7 @@ import { ImageComponent } from './image/image.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
+import { AuthenticationGuard } from './app/services/authenticationGuard.service';
 
 const appRoutes: Routes = [
   {
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent, canActivate: [AuthenticationGuard]
+    component: LoginComponent
   }
 ];
 
