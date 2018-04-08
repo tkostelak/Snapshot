@@ -10,7 +10,7 @@ import { ImageComponent } from './image/image.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
-import { AuthenticationGuard } from './app/services/authenticationGuard.service';
+import { AuthenticationGuard } from './services/authenticationGuard.service';
 
 const appRoutes: Routes = [
   {
