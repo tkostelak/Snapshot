@@ -5,13 +5,13 @@
 
 .nav-link{
   font-family: 'Lobster', cursive;
-  font-size: 3vw;
+  font-size: 2.75vw;
 
 }
 
 #navbar {
   background-color: #404040;
-  width: 100%;
+  width: 98%;
 }
 
 .dropdown-item{
@@ -31,4 +31,8 @@
 
 #brandText {
   padding-left: 20px;
+}
+
+.data-toggle {
+  padding-right: 5%;
 }
