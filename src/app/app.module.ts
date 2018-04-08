@@ -51,6 +51,7 @@ import { LoginComponent } from './login/login.component';
   providers: [ImageFilterPipe,
      AuthenticationGuard,
      ImageService,
+     AuthenticationService,
      UploadService],
   bootstrap: [AppComponent]
 })

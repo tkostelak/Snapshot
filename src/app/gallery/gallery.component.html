@@ -1,7 +1,7 @@
 <h3 id="galleryText">{{ title }}</h3>
-  <div class="row ">
+  <div class="row">
   <ul id="thumbnailsList">
-    <li * ngFor="let image of images | async" class ="img">
+    <li *ngFor="let image of images | async" class ="img">
       <a [routerLink]="['/image', image.$key]">
       <img src="{{image.url}}" class="tn">
       </a>
