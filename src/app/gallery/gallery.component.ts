@@ -1,22 +1,21 @@
-import { Component, OnChanges, Input } from '@angular/core';
-// import { ImageService } from '../shared/image.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ImageService } from '../services/image.service';
 import { ImageFilterPipe } from '../shared/filter.pipe';
+import { Observable } from 'rxjs/Observable';
+import { GalleryImage } from '../models/galleryimage.model';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent {
-  title = 'Gallery'
-  visibleImages: any[] = [];
-  @Input() filterBy?: string = 'all'
+export class GalleryComponent implements OnInit{
+  images: Observable<GalleryImage[]>;
 
-  // constructor(private newImageService: ImageService) {
-  //   this.visibleImages = this.newImageService.getImages();
-  // }
+  constructor(private imageService: ImageService) {
+  }
 
-  // ngOnChanges(){
-  //   this.visibleImages = this.newImageService.getImages();
-  // }
+  ngOnInit(){
+    this.images = this.imageService.getImages();
+  }
 }
