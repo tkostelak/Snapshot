@@ -9,6 +9,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageComponent } from './image/image.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {
@@ -17,16 +18,22 @@ const appRoutes: Routes = [
   },
   {
     path: 'gallery',
-    component: GalleryComponent
+    component: GalleryComponent, canActivate: [AuthenticationGuard]
   },
   {
     path: 'image/:id',
-    component: ImageComponent
+    component: ImageComponent, canActivate: [AuthenticationGuard]
   },
   {
     path: 'upload',
-    component: UploadComponent
+    component: UploadComponent, canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent, canActivate: [AuthenticationGuard]
   }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const Routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+
+//Guard is feature that prevents user from visiting URL without first authenticating!
