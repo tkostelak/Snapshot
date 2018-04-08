@@ -46,13 +46,14 @@ import { LoginComponent } from './login/login.component';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [ImageFilterPipe,
      AuthenticationGuard,
      ImageService,
      AuthenticationService,
-     UploadService],
+     UploadService,
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

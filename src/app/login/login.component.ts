@@ -16,10 +16,10 @@ export class LoginComponent {
 
   constructor(private authService: AuthenticationService, private router: Router) { }
 
-  signIn() {
+  login() {
     this.authService.login({ email: this.email, password: this.password})
       .then(resolve => this.router.navigate(['gallery']))
-      .catch(error => this.errorMsg = error.message);      
+      .catch(error => this.errorMsg = error.message);
   }
 
 }

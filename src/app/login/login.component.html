@@ -10,7 +10,7 @@
       <input class="form-control" #passwordControl="ngModel" placeholder="Password" [(ngModel)]="password" name="password" maxlength="30" password required type="password">
     </div>
     <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info"
-      (click)="signin()">Sign In
+      (click)="login()">Sign In
     </button>
     <p *ngIf="msg" class="text-danger">{{msg}}</p>
   </form>
