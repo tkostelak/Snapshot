@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { ImageService } from '../shared/image.service';
-import { Uploads } from '../uploads';
+import { ImageService } from '../services/image.service';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as _ from "Lodash";
