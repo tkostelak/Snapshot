@@ -1,3 +1,4 @@
+//MODULES
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,9 +8,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
+//PIPES AND SERVICES
 import { ImageFilterPipe} from './shared/filter.pipe'
-// import { ImageService } from './shared/image.service';
+import { ImageService } from './services/image.service';
+import { UploadService } from './services/upload.service';
+import { AuthenticationGuard } from './services/authenticationGuard.service';
+import { AuthenticationService } from './services/authentication.service';
+
+//COMPONENTS
 import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -17,7 +25,6 @@ import { ImageComponent } from './image/image.component';
 import { Routing } from './app.routing'
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
-import { DropZoneDirective } from './drop-zone.directive';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -29,7 +36,6 @@ import { LoginComponent } from './login/login.component';
     ImageFilterPipe,
     WelcomeComponent,
     UploadComponent,
-    DropZoneDirective,
     LoginComponent,
   ],
   imports: [
@@ -39,9 +45,13 @@ import { LoginComponent } from './login/login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
-  providers: [ImageFilterPipe],
+  providers: [ImageFilterPipe,
+     AuthenticationGuard,
+     ImageService,
+     UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
