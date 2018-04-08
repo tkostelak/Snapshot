@@ -18,6 +18,7 @@ import { routing } from './app.routing'
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UploadComponent } from './upload/upload.component';
 import { DropZoneDirective } from './drop-zone.directive';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DropZoneDirective } from './drop-zone.directive';
     WelcomeComponent,
     UploadComponent,
     DropZoneDirective,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,42 +7,8 @@
 //
 // @Injectable()
 // export class ImageService{
-//   constructor(private af: AngularFireModule, private db: AngularFireDatabase) {}
-//
-//   private basepath:string = '/uploads';
-//   private uploadTask: firebase.storage.UploadTask;
-//
-//   pushUpload(upload: Uploads){
-//     let storageRef = firebase.storage().ref();
-//     this.uploadTask = storageRef.child(`${this.basepath}/${upload.file.name}`).put(upload.file);
-//
-//     this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-//       (snapshot)=> {
-//         upload.progress = (this.uploadTask.snapshot.bytesTransferred / this.uploadTask.snapshot.totalBytes) * 100
-//       },
-//       (error) =>
-//       console.log(error)
-//     ),
-//     () => {
-//       upload.url = this.uploadTask.snapshot.downloadURL
-//       upload.name = upload.file.name
-//       this.saveFileData(upload)
-//     }
-//   }
-//
-//   deleteUpload(upload: Upload) {
-//     this.deleteFileData(upload.$key)
-//     .then( () => {
-//       this.deleteFileStorage(upload.name)
-//     })
-//     .catch(error => console.log(error))
-//   }
-//
-//   private deleteFileStorage(name:string){
-//     let storageRef = firebase.storage().ref();
-//     storageRef.child(`${this.basepath}/${name}`).delete()
-//   }
-//
+//   constructor() {}
+// //
 //   visibleImages = [];
 //   getImages(){
 //     return this.visibleImages = Images.slice(0);
