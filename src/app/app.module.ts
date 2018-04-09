@@ -9,7 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 //PIPES AND SERVICES
 import { ImageFilterPipe} from './shared/filter.pipe'
 import { ImageService } from './services/image.service';
@@ -53,6 +53,7 @@ import { LoginComponent } from './login/login.component';
      ImageService,
      AuthenticationService,
      UploadService,
+     AngularFireDatabase
    ],
   bootstrap: [AppComponent]
 })

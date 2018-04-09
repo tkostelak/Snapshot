@@ -8,6 +8,4 @@ export const environment = {
     storageBucket: "photo-editor-4bd63.appspot.com",
     messagingSenderId: "435749543350"
   }
-
-
 };
