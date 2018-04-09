@@ -9,17 +9,3 @@
   height: 50%;
 
 }
-
-#caption{
-  font-size: 2em;
-  font-family: 'Oswald';
-  padding: 20px;
-  color: #222;
-  border: 10px solid #0D4656;
-  width: 900px;
-}
-
-.caption-row {
-  padding: 24px;
-  text-align: center;
-}

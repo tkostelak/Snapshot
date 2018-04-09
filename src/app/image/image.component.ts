@@ -1,37 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
-// import { ImageService } from '../shared/image.service';
+import { Component, OnInit } from '@angular/core';
+import { ImageService } from '../services/image.service';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database'
 import { Injectable } from '@angular/core';
+import { GalleryImage } from '../models/galleryImage.model';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-image',
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css']
 })
-export class ImageComponent {
+export class ImageComponent implements OnInit {
+  private imageUrl = '';
 
-  @Input() file: File;
+  constructor(private imageService: ImageService,
+     private route: ActivatedRoute){
+  }
 
-  // constructor(private imageService: ImageService, private route: ActivatedRoute) { }
-  //
-  // ngOnInit(){
-  //   this.image = this.imageService.getImage(
-  //     +this.route.snapshot.params['id']
-  //   )
-  // }
+  getImageUrl(key: string) {
+    this.imageService.getImage(key)
+      .then(image => this.imageUrl = image.url);
+  }
 
-  // updateTimeStamp() {
-  //   let date = new Date()
-  //   this.imageService.updateImage(this.image.$key, { timeStamp: date})
-  // }
-  //
-  // updateActive(value: boolean) {
-  //   this.imageService.updateImage(this.image.$key, { active: value})
-  // }
-  //
-  // deleteImage() {
-  //   this.imageService.deleteImage(this.image.$key)
-  // }
+   ngOnInit() {
+     this.getImageUrl(this.route.snapshot.params['id']);
+  }
 
 }
