@@ -1,40 +1,47 @@
-# PhotoEditor
+# Snapshot
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+### Angular, Firebase and Typescript Exercise for Epicodus, 04/08/2018
+### By Tyler Kostelak
+
+## Description
+_This project was a foray into utilizing the Angular Framework and Firebase file storage to allow users to upload photos to a server less database._
 
 ## Specifications
 
-1. First, a user should be able to add a photo to the site.
+### Behavior Driven Development
 
-2. Once a user has added a photo, a workspace should appear that allows the user to add filters to their photo.
+1. First, the user should be able to create an account on the site.
 
-3. Once the workspace has appeared, the user should be able to adjust the filter bars in the workspace and the corresponding attribute should be adjusted in the photo.
-  i.e: The user slides the saturation bar to the right by two notches, and the saturation of the photo is increased by 20%.
+2. After the user has created an account, they should be able to successfully log in and log out of the site. They should not be able to access content when they are not logged in.
 
-4. If the user does not want to manually adjust photos and would prefer presets, they should be able to select pre-made filters, and when clicked, they should adjust the filter bars automatically for the user.
+3. Now that the user can log into the site, they should be able to upload either a photo or multiple photos to their gallery that is hosted on the site.
 
-5. Once the user is done editing a photo, they should be able to add it to a gallery on the site.
+4. Once the user has added photos to the gallery, they should be able to navigate to the gallery tab and view all of the photos that are stored on the site.
 
-## Development server
+## Setup/Installation Requirements
+1. Clone this repository
+2. Run the following commands in the terminal:
+   npm Install
+   ng server
+3. Navigate your browser (preferably Chrome) to http://localhost:4200
+4. In order to sign in, you may use the following guest login:
+   _email: guest@gmail.com_
+   _password: password123_
+5. Enjoy using the app!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Known Bugs
+Console error: "Refused to apply style from 'http://localhost:4200/.styles.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.""
 
-## Code scaffolding
+## Support and contact details
+If you have suggestions for how to help me make any additions, or if you have other feedback, please feel free to contact me at tkostelak@gmail.com. All feedback is welcome, keep in mind that the primary focus of this project is Angular and Firebase.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
+Node
+Typescript
+Firebase
+Angular
 
-## Build
+## License
+The software is licensed under the MIT license.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2018 Tyler Kostelak
