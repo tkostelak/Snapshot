@@ -1,13 +1,13 @@
 #loginText {
   margin-top: 20px;
   text-align: center;
-  font-family: "Lobster", cursive;
+  font-family: 'Oswald', sans-serif;
   color: #313332;
   font-size: 5vw;
 }
 
 .container{
-  margin-bottom: 260px;
+  margin-bottom: 180px;
 }
 
 .loginContainer{
